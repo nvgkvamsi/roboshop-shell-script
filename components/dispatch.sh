@@ -1,6 +1,7 @@
 yum install golang -y
 
 useradd roboshop
+
 cd /home/roboshop
 
 curl -L -s -o /tmp/dispatch.zip https://github.com/roboshop-devops-project/dispatch/archive/refs/heads/main.zip
