@@ -8,7 +8,7 @@ systemctl enable rabbitmq-server
 
 systemctl start rabbitmq-server
 
-rabbitmqctl add_user roboshop roboshop123
+rabbitmqctl add_user roboshop ${RABBITMQ_USER_PASSWORD}
 
 rabbitmqctl set_user_tags roboshop administrator
 
