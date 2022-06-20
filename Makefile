@@ -8,7 +8,7 @@ user:
 	@bash components/user.sh
 payment:
 	@bash components/payment.sh
-dispatch:
+shipping:
 	@bash components/shipping.sh
 mysql:
 	@bash components/mysql.sh
