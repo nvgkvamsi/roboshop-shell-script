@@ -18,3 +18,5 @@ rabbitmq:
 	@bash components/rabbitmq.sh
 cart:
 	@bash components/cart.sh
+dispatch:
+	@bash components/dispatch.sh
