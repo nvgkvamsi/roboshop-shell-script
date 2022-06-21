@@ -3,47 +3,49 @@ source components/common.sh
 CHECK_ROOT
 
 
-echo " Setting UP NodeJS YUM REPO is failure"
+PRINT " Setting UP NodeJS YUM REPO is failure"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 CHECK_STAT $?
 
-echo " Installing NodeJS"
+PRINT " Installing NodeJS"
 yum install nodejs -y &>>${LOG}
 CHECK_STAT $?
 
-echo "Creating Application User"
+PRINT "Creating Application User"
 useradd roboshop &>>${LOG}
 CHECK_STAT $?
 
-echo "Downloading Cart Content"
+PRINT "Downloading Cart Content"
 curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip" &>>${LOG}
 CHECK_STAT $?
 
 
 cd /home/roboshop
 
-echo "Extract Cart Content"
+PRINT "Extract Cart Content"
 unzip -o /tmp/cart.zip &>>${LOG}
 CHECK_STAT $?
 
 mv cart-main cart
 cd cart
 
-echo "Install NodeJS Dependencies"
+PRINT "Install NodeJS Dependencies"
 npm install &>>${LOG}
 CHECK_STAT $?
 
-echo "Update SystemD Configuration"
+PRINT "Update SystemD Configuration"
 sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/roboshop/cart/systemd.service &>>${LOG}
 CHECK_STAT $?
 
-echo "Setup Systemd Service"
+PRINT "Setup Systemd Service"
 mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service &>>${LOG}
 CHECK_STAT $?
 
 systemctl daemon-reload
-
-systemctl restart cart
-
 systemctl enable cart
+
+PRINT "Start Cart Service"
+systemctl restart cart &>>${LOG}
+CHECK_STAT $?
+
 }
