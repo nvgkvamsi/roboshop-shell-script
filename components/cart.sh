@@ -3,12 +3,8 @@ source components/common.sh
 CHECK_ROOT
 
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-
-if [ $? -ne 0 ]; then
-  echo " Setting UP NodeJS YUM REPO is failure"
-  exit 2
-fi
+echo " Setting UP NodeJS YUM REPO is failure"
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 
 
 yum install nodejs -y
