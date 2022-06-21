@@ -22,7 +22,7 @@ LOG=/tmp/roboshop.log
 rm -f $LOG
 
 PRINT() {
-  echo "---------------$1-------------"
+  echo "---------------$1-------------" >>${LOG}
   echo "$1"
 }
 
