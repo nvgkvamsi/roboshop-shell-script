@@ -1,4 +1,4 @@
-sourcre components/common.sh
+source components/common.sh
 
 CHECK_ROOT
 
