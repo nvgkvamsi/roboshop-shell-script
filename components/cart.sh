@@ -5,7 +5,7 @@ CHECK_ROOT
 
 echo " Setting UP NodeJS YUM REPO is failure"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
-
+CHECk_STAT $?
 
 yum install nodejs -y
 
