@@ -106,7 +106,7 @@ NGINX() {
 
 
   PRINT "Extract ${COMPONENT} Content"
-  unzip -o /tmp/${COMPONENT}.zip
+  unzip /tmp/${COMPONENT}.zip
   CHECK_STAT $?
 
   PRINT "Organize ${COMPONENT} Content"
