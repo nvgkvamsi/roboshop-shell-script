@@ -93,7 +93,7 @@ NGINX() {
   CHECK_ROOT
   PRINT "Installing NGINX"
   yum install nginx -y &>>${LOG}
-  CHECK_STAT &?
+  CHECK_STAT $?
 
   PRINT "Download ${COMPONENT} Content"
   curl -s -L -o /tmp/{COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>${LOG}
