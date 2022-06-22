@@ -75,7 +75,7 @@ NODEJS()
   CHECK_STAT $?
 
   systemctl daemon-reload
-  systemctl enable ${COMPONENT}
+  systemctl enable ${COMPONENT}&>>${LOG}
 
   PRINT "Start Cart Service"
   systemctl restart ${COMPONENT} &>>${LOG}
