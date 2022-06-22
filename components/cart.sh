@@ -25,6 +25,10 @@ CHECK_STAT $?
 
 cd /home/roboshop
 
+PRINT "Remove  Old Content"
+rm -rf cart &>>${LOG}
+CHECK_STAT $?
+
 PRINT "Extract Cart Content"
 unzip -o /tmp/cart.zip &>>${LOG}
 CHECK_STAT $?
