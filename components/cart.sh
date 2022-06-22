@@ -3,11 +3,11 @@ source components/common.sh
 CHECK_ROOT
 
 
-PRINT " Setting Up NodeJS YUM REPO"
+PRINT "Setting Up NodeJS YUM REPO"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 CHECK_STAT $?
 
-PRINT " Installing NodeJS"
+PRINT "Installing NodeJS"
 yum install nodejs -y &>>${LOG}
 CHECK_STAT $?
 
@@ -25,7 +25,7 @@ CHECK_STAT $?
 
 cd /home/roboshop
 
-PRINT "Remove  Old Content"
+PRINT "Remove Old Content"
 rm -rf cart &>>${LOG}
 CHECK_STAT $?
 
