@@ -96,7 +96,7 @@ NGINX() {
   CHECK_STAT $?
 
   PRINT "Download ${COMPONENT} Content"
-  curl -s -L -o /tmp/{COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>${LOG}
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>${LOG}
   CHECK_STAT $?
 
   PRINT "Clean OLD Content"
