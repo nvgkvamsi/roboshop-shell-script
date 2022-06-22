@@ -128,7 +128,7 @@ MAVEN() {
   CHECK_ROOT
 
   PRINT "Installing Maven"
-  yum install maven -y
+  yum install maven -y &>>${LOG}
   CHECK_STAT $?
 
   APP_COMMON_SETUP
