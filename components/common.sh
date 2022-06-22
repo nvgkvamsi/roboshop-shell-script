@@ -122,7 +122,7 @@ NGINX() {
 }
 
 
-MAVENO() {
+MAVEN() {
 
 
   CHECK_ROOT
