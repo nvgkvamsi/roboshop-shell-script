@@ -54,5 +54,3 @@ systemctl enable cart
 PRINT "Start Cart Service"
 systemctl restart cart &>>${LOG}
 CHECK_STAT $?
-
-}
