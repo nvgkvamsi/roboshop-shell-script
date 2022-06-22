@@ -3,7 +3,7 @@ source components/common.sh
 CHECK_ROOT
 
 
-PRINT " Setting UP NodeJS YUM REPO is failure"
+PRINT " Setting Up NodeJS YUM REPO"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 CHECK_STAT $?
 
