@@ -12,7 +12,7 @@ yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erl
 CHECK_STAT $?
 
 PRINT "Start RabbitMQ Service"
-systemctl enable rabbitmq-server && systemctl start rabbitmq-server &>>${LOG}
+systemctl enable rabbitmq-server &>>${LOG} && systemctl start rabbitmq-server &>>${LOG}
 CHECK_STAT $?
 
 PRINT "Create a RabbitMQ User"
